@@ -1,0 +1,26 @@
+<div>
+    <mat-card class="patients-card" *ngFor="let patient of patients">
+        <mat-card-title>{{patient.firstName}} {{patient.lastName}}; Date of Birth: {{patient.dateOfBirth}} Doctor: {{patient.doctor}}</mat-card-title>
+    </mat-card>
+    <mat-card class="new-patient-card" id="newPatientCard">
+        <mat-card-header>
+            <mat-card-title>Create new patient</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <label>First name: </label>          
+            <input #newFirstName value="Enter new name!"/>
+            <br/>
+            <label>Last name: </label>          
+            <input #newLastName value="Enter new name!"/>
+            <br/>
+            <label>Date Of Birth: </label>
+            <input #newDateOfBirth value="dd/MM/yyyy format!"/>
+            <br/>
+            <label>DoctorId: </label>
+            <input #newDoctorId value="Enter new doctor!"/>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button (click)="createPatient(newFirstName.value, newLastName.value, newDateOfBirth.value, newDoctorId.value)">SAVE</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

@@ -1,0 +1,26 @@
+<div>
+    <mat-card class="histories-card" *ngFor="let history of histories">
+        <mat-card-title>{{history.name}}; {{history.description}}; Date: {{history.date}}</mat-card-title>
+    </mat-card>
+    <mat-card class="new-history-card" id="newHistoryCard">
+        <mat-card-header>
+            <mat-card-title>Create new history</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <label>Description: </label>          
+            <input #newDescription value="Enter new description"/>
+            <br/>
+            <label>Date: </label>          
+            <input #newDate value="dd/MM/yyyy format!"/>
+            <br/>
+            <label>PatientId: </label>
+            <input #newPatientId value="Enter new patient id"/>
+            <br/>
+            <label>DoctorId: </label>
+            <input #newDoctorId value="Enter new doctor!"/>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button (click)="createHistory(newDescription.value, newDate.value, newPatientId.value, newDoctorId.value)">SAVE</button>
+        </mat-card-actions>
+    </mat-card>
+</div>
